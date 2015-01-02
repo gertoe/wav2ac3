@@ -1,9 +1,8 @@
 #!/bin/bash
-# REQUIRED TOOLS: sox, ffmpeg 
-# sh wav2ac3.sh input
+# usage sh wav2ac3.sh input_file
 
 #resample to 48kHz and lower volume to avaid clipping
-sox -S -V -c 2 $input -r 48k stereoInput.wav gain -h
+sox -S -V -c 2 $1 -r 48k stereoInput.wav gain -h
 
 #front = stereo.soxfilter("filter 20-20000")
 sox -S -V -c 2 stereoInput.wav front.wav sinc 20-20000
