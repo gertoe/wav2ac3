@@ -1,5 +1,7 @@
 #!/bin/bash
-# usage sh wav2ac3.sh input_file
+# Adapted from https://forum.videohelp.com/threads/335904-How-to-Convert-2-channel-stereo-wave-into-DD5-1-AC3-448-AC-640
+#
+# usage sh wav2ac3.sh stereoInput.wav
 
 #resample to 48kHz and lower volume to avaid clipping
 sox -S -V -c 2 $1 -r 48k stereoInput.wav gain -h
