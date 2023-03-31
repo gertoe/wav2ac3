@@ -8,8 +8,8 @@ sox -S -V -c 2 $1 -r 48k stereoInput.wav gain -h
 
 #front = stereo.soxfilter("filter 20-20000")
 sox -S -V -c 2 stereoInput.wav front.wav sinc 20-20000
-sox -S -V -c 2 front.wav -c 1 frontL.wav mixer -l
-sox -S -V -c 2 front.wav -c 1 frontR.wav mixer -r
+sox -S -V front.wav frontL.wav remix 01
+sox -S -V front.wav frontR.wav remix 02
 
 #fl = mixaudio(front.GetLeftChannel(),front.GetRightChan nel(),0.794,-0.794)
 sox -S -V -c 2 front.wav front_left.wav remix -m 1v0.794,2v-0.794
